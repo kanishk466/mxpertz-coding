@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Hero from './Hero';
 
 const StoryDetail = () => {
+  
   const { id } = useParams(); // Get the story ID from the URL
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -43,8 +44,9 @@ const StoryDetail = () => {
     <>
     <Navbar/>
     <Hero/>
-       <div className="container mt-4">
-      <div className="row">
+    <div className="container mt-4">
+      {/* Story Title and Status */}
+      <div className="row mb-4">
         <div className="col-md-4">
           <h1>{story.Title}</h1>
           <p><strong>Status:</strong> {story.Status}</p>
@@ -61,6 +63,7 @@ const StoryDetail = () => {
         </div>
       </div>
 
+      {/* Story Adventure Section */}
       <div className="mt-4">
         <h3>Story Adventure:</h3>
         <div className="row">
@@ -76,7 +79,7 @@ const StoryDetail = () => {
                   />
                 ))}
                 {contentItem.Paragraph.map((para, paraIndex) => (
-                  <p key={paraIndex}>{para}</p> // Ensure we render strings here
+                  <p key={paraIndex}>{para}</p>
                 ))}
               </div>
             </div>
@@ -84,6 +87,7 @@ const StoryDetail = () => {
         </div>
       </div>
 
+      {/* Brain Quest Questions Section */}
       <div className="mt-4">
         <h3>Brain Quest Questions:</h3>
         <ul className="list-group">
@@ -97,13 +101,18 @@ const StoryDetail = () => {
         </ul>
       </div>
 
+      {/* Word Exploration Section */}
       <div className="mt-4">
         <h3>Word Exploration:</h3>
         <div className="row">
           {story.Wordexplore && story.Wordexplore.map((word, index) => (
             <div key={index} className="col-md-6 mb-3">
               <div className="card">
-                <img src={`https://ik.imagekit.io/dev24/${word.Storyimage[0]}`} alt={word.Noun} className="card-img-top" />
+                <img 
+                  src={`https://ik.imagekit.io/dev24/${word.Storyimage[0]}`} 
+                  alt={word.Noun} 
+                  className="card-img-top" 
+                />
                 <div className="card-body">
                   <h5 className="card-title">{word.Storytitle}</h5>
                   <p className="card-text">{word.Storyttext}</p>
@@ -117,6 +126,8 @@ const StoryDetail = () => {
         </div>
       </div>
     </div>
+
+
     </>
  
   );

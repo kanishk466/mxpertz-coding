@@ -4,12 +4,21 @@ import axios from 'axios';
 import Navbar from "./Navbar.jsx"
 import StoriesCard from './StoriesCard.jsx';
 import Hero from './Hero.jsx';
+
+
+import Pagination from './Pagination.jsx';
+
 const Stories = () => {
+
+
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // Track current page
-  const itemsPerPage = 10; // Define how many items per page
+
+  const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(10);
+
+
 
 
   useEffect(() => {
@@ -38,50 +47,34 @@ const Stories = () => {
     return <div>Error: {error}</div>;
   }
 
-    // Calculate the items to display based on the current page
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = stories.slice(indexOfFirstItem, indexOfLastItem);
+  const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    const currentRecords = stories.slice(indexOfFirstRecord, indexOfLastRecord);
+    console.log("currentRecord " , currentRecords);
+    
+    const nPages = Math.ceil(stories.length / recordsPerPage)
   
-    // Function to handle page changes
-    const handleNextPage = () => {
-      if (currentPage < Math.ceil(stories.length / itemsPerPage)) {
-        setCurrentPage((prevPage) => prevPage + 1);
-      }
-    };
-  
-    const handlePrevPage = () => {
-      if (currentPage > 1) {
-        setCurrentPage((prevPage) => prevPage - 1);
-      }
-    };
 
   return (
     <>
     <Navbar/>
    <Hero/>
-    <div class="album py-5 bg-light">
+
+   <Pagination nPages={nPages} currentPage={currentPage}
+                setCurrentPage={setCurrentPage} />
+    <div class="album py-5">
     <div class="container">
 
       <div class="row">
-       <StoriesCard stories={stories}/>
+       <StoriesCard stories={currentRecords}/>
        
   
       </div>
     </div>
   </div>
-   {/* Pagination Controls */}
-   <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          Previous
-        </button>
-        <span>Page {currentPage}</span>
-        <button onClick={handleNextPage} disabled={currentPage === Math.ceil(stories.length / itemsPerPage)}>
-          Next
-        </button>
-      </div>
 
-  
+
+
     </>
   );
 };

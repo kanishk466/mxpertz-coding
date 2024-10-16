@@ -1,132 +1,67 @@
-/* Main container */
-.app-container {
-    padding: 20px;
-    background-color: #10143b;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    min-height: 100vh;
-    text-align: center;
-  }
-  
-  .heading {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  .btn-primary {
-    margin-left: 23rem;
-  }
-  .navbar-nav {
-    margin-left: 20rem;
-  }
-  .filter-section {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-  }
-  
-  /* Filter Buttons */
-  .filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  .container-image{
-    background-image: url('./assets//saturn-341379_1280.jpg');
+ /* Full-screen background image */
+ .bg-cover {
+  background: url('./assets/saturn-341379_1280.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+.hero-row{
+  margin-top: -16rem;
+}
+.album{
+  background-color: #002244;
+}
+/* Transparent Navbar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.3); /* Slight white transparency */
+}
 
-    height: 400px;
-  }
+/* Center content in the navbar */
+.navbar .center-items {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Custom padding for spacing */
+.navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-signout {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
   
-  .filter-btn {
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .filter-btn.active {
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
-  }
-  
-  .filter-btn:nth-child(1) {
-    background-color: #3264fe;
-  }
-  
-  .filter-btn:nth-child(2) {
-    background-color: #feaf32;
-  }
-  
-  .filter-btn:nth-child(3) {
-    background-color: #32fe81;
-  }
-  
-  .clear-all {
-    background-color: #61b7f7;
-  }
-  
-  .status-icon {
-    margin-right: 8px;
-  }
-  
-  /* Stories Grid Layout */
-  .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Story Card */
-  .story-card {
-    background-color: #212a52;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
-  }
-  
-  .story-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .story-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-bottom: 3px solid #3264fe;
-  }
-  
-  .story-details {
-    padding: 15px;
-  }
-  
-  .story-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  .status-badge {
-    padding: 5px 10px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .status-badge.new {
-    background-color: #3264fe;
-  }
-  
-  .status-badge.in-progress {
-    background-color: #feaf32;
-  }
-  
-  .status-badge.completed {
-    background-color: #32fe81;
-  }
-  
+  color: white;
+  border-radius: 20px;
+}
+.custom-shape-divider-bottom-1729102066 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1729102066 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 152px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1729102066 .shape-fill {
+  fill: #002244;
+}
+

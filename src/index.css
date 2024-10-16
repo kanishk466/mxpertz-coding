@@ -1,0 +1,132 @@
+/* Main container */
+.app-container {
+    padding: 20px;
+    background-color: #10143b;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .btn-primary {
+    margin-left: 23rem;
+  }
+  .navbar-nav {
+    margin-left: 20rem;
+  }
+  .filter-section {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+  
+  /* Filter Buttons */
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .container-image{
+    background-image: url('./assets//saturn-341379_1280.jpg');
+
+    height: 400px;
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .filter-btn.active {
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+  }
+  
+  .filter-btn:nth-child(1) {
+    background-color: #3264fe;
+  }
+  
+  .filter-btn:nth-child(2) {
+    background-color: #feaf32;
+  }
+  
+  .filter-btn:nth-child(3) {
+    background-color: #32fe81;
+  }
+  
+  .clear-all {
+    background-color: #61b7f7;
+  }
+  
+  .status-icon {
+    margin-right: 8px;
+  }
+  
+  /* Stories Grid Layout */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Story Card */
+  .story-card {
+    background-color: #212a52;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .story-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .story-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #3264fe;
+  }
+  
+  .story-details {
+    padding: 15px;
+  }
+  
+  .story-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .status-badge.new {
+    background-color: #3264fe;
+  }
+  
+  .status-badge.in-progress {
+    background-color: #feaf32;
+  }
+  
+  .status-badge.completed {
+    background-color: #32fe81;
+  }
+  
